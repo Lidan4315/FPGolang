@@ -13,7 +13,7 @@ type Merek struct {
 type Mobil struct {
 	ID              uuid.UUID `gorm:"type:uuid;primary_key;default:uuid_generate_v4()" json:"id"`
 	MerekID         uuid.UUID `gorm:"type:uuid" json:"merek_id"`
-	Merek           Merek     `gorm:"foreignKey:MerekID;references:ID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE" json:"-"`
+	Merek           Merek     `gorm:"foreignKey:MerekID;references:ID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE" json:"merek"`
 	Type            string    `json:"type"`
 	NoPlat          string    `json:"no_plat"`
 	Warna           string    `json:"warna"`

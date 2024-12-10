@@ -6,12 +6,12 @@ import (
 )
 
 func MobilRoutes(router *gin.Engine, mobilController *controller.MobilController) {
-	mobilGroup := router.Group("/api/mobils")
+	mobilGroup := router.Group("/api/rentycar")
 	{
-		mobilGroup.POST("/", mobilController.CreateMobil)
-		mobilGroup.GET("/all", mobilController.GetAllMobil)
-		mobilGroup.GET("/:id", mobilController.GetMobilById)
-		mobilGroup.PUT("/", mobilController.UpdateMobil)
-		mobilGroup.DELETE("/:id", mobilController.DeleteMobil)
+		mobilGroup.POST("/create-car", mobilController.CreateMobil)
+		mobilGroup.GET("/all-car", mobilController.GetAllMobil)
+		mobilGroup.GET("single-car/:id", mobilController.GetMobilById)
+		mobilGroup.PUT("/update/", mobilController.UpdateMobil)
+		mobilGroup.DELETE("/delete-car/:id", mobilController.DeleteMobil)
 	}
 }
